@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace ToDoList
 {
@@ -26,11 +19,11 @@ namespace ToDoList
 
         private void bind_Data()
         {
-            SqlCommand cmd1 =
+            SqlCommand selectCmd =
                 new SqlCommand(
                     "Select id As Number,day As Day,time As Time,todo As ToDo,requirements As Requirements from Table1", con);
             SqlDataAdapter da = new SqlDataAdapter();
-            da.SelectCommand = cmd1;
+            da.SelectCommand = selectCmd;
             DataTable dt = new DataTable();
             dt.Clear();
             da.Fill(dt);
@@ -39,35 +32,35 @@ namespace ToDoList
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd2 =
+            SqlCommand saveBtn =
                 new SqlCommand(
                     "Insert into Table1(id,day,time,todo,requirements) Values(@id,@day,@time,@todo,@requirements)",
                     con);
-            cmd2.Parameters.AddWithValue("id",textBox1.Text);
-            cmd2.Parameters.AddWithValue("day", DateTime.Parse(textBox2.Text));
-            cmd2.Parameters.AddWithValue("time", DateTime.Parse(textBox3.Text));
-            cmd2.Parameters.AddWithValue("todo",textBox4.Text);
-            cmd2.Parameters.AddWithValue("requirements",textBox5.Text);
+            saveBtn.Parameters.AddWithValue("id", textBox1.Text);
+            saveBtn.Parameters.AddWithValue("day", textBox2.Text);
+            saveBtn.Parameters.AddWithValue("time", textBox3.Text);
+            saveBtn.Parameters.AddWithValue("todo", textBox4.Text);
+            saveBtn.Parameters.AddWithValue("requirements", textBox5.Text);
 
             con.Open();
-            cmd2.ExecuteNonQuery();
+            saveBtn.ExecuteNonQuery();
             con.Close();
             bind_Data();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd3 = new SqlCommand(
+            SqlCommand editBtn = new SqlCommand(
                     "Update Table1 Set day=@day,time=@time,todo=@todo,requirements=@requirements where id=@id",
                     con);
-            cmd3.Parameters.AddWithValue("day", DateTime.Parse(textBox2.Text));
-            cmd3.Parameters.AddWithValue("time", DateTime.Parse(textBox3.Text));
-            cmd3.Parameters.AddWithValue("todo", textBox4.Text);
-            cmd3.Parameters.AddWithValue("requirements", textBox5.Text);
-            cmd3.Parameters.AddWithValue("id", textBox1.Text);
+            editBtn.Parameters.AddWithValue("day", textBox2.Text); ;
+            editBtn.Parameters.AddWithValue("time", textBox3.Text);
+            editBtn.Parameters.AddWithValue("todo", textBox4.Text);
+            editBtn.Parameters.AddWithValue("requirements", textBox5.Text);
+            editBtn.Parameters.AddWithValue("id", textBox1.Text);
 
             con.Open();
-            cmd3.ExecuteNonQuery();
+            editBtn.ExecuteNonQuery();
             con.Close();
             bind_Data();
         }
@@ -82,6 +75,17 @@ namespace ToDoList
             textBox3.Text = selectedrow.Cells[2].Value.ToString();
             textBox4.Text = selectedrow.Cells[3].Value.ToString();
             textBox5.Text = selectedrow.Cells[4].Value.ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SqlCommand deleteBtn = new SqlCommand("Delete from Table1 where id=@id", con);
+            deleteBtn.Parameters.AddWithValue("id", textBox1.Text);
+
+            con.Open();
+            deleteBtn.ExecuteNonQuery();
+            con.Close();
+            bind_Data();
         }
     }
 }
