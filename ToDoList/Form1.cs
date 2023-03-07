@@ -36,5 +36,23 @@ namespace ToDoList
             da.Fill(dt);
             dataGridView1.DataSource = dt;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd2 =
+                new SqlCommand(
+                    "Insert into Table1(id,day,time,todo,requirements) Values(@id,@day,@time,@todo,@requirements)",
+                    con);
+            cmd2.Parameters.AddWithValue("id",textBox1.Text);
+            cmd2.Parameters.AddWithValue("day", DateTime.Parse(textBox2.Text));
+            cmd2.Parameters.AddWithValue("time", DateTime.Parse(textBox3.Text));
+            cmd2.Parameters.AddWithValue("todo",textBox4.Text);
+            cmd2.Parameters.AddWithValue("requirements",textBox5.Text);
+
+            con.Open();
+            cmd2.ExecuteNonQuery();
+            con.Close();
+            bind_Data();
+        }
     }
 }
