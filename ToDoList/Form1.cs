@@ -105,5 +105,25 @@ namespace ToDoList
             da.Fill(dt);
             dataGridView1.DataSource = dt;
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Action<Control.ControlCollection> func = null;
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                {
+                    if (control is TextBox)
+                    {
+                        (control as TextBox).Clear();
+                    }
+                    else
+                    {
+                        func(control.Controls);
+                    }
+                }
+            };
+            func(Controls);
+        }
     }
 }
