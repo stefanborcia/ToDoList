@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ToDoList
@@ -12,6 +13,7 @@ namespace ToDoList
             InitializeComponent();
         }
         SqlConnection con = new SqlConnection("Data source=.; initial catalog=ToDoListDB;integrated security=true");
+
         private void Form1_Load(object sender, EventArgs e)
         {
             bind_Data();
@@ -86,6 +88,22 @@ namespace ToDoList
             deleteBtn.ExecuteNonQuery();
             con.Close();
             bind_Data();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SqlCommand selectCmd =
+                new SqlCommand(
+                    "Select id As Number,day As Day,time As Time,todo As ToDo,requirements As Requirements from Table1" +
+                    " where todo Like @todo+'%'", con);
+            selectCmd.Parameters.AddWithValue("todo", textBox6.Text);
+
+            SqlDataAdapter da = new SqlDataAdapter();
+            da.SelectCommand = selectCmd;
+            DataTable dt = new DataTable();
+            dt.Clear();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
         }
     }
 }

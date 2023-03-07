@@ -43,6 +43,8 @@ namespace ToDoList
             this.button3 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,7 +134,7 @@ namespace ToDoList
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(163, 247);
+            this.button1.Location = new System.Drawing.Point(372, 243);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 34);
             this.button1.TabIndex = 11;
@@ -142,7 +144,7 @@ namespace ToDoList
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(283, 247);
+            this.button2.Location = new System.Drawing.Point(492, 243);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 34);
             this.button2.TabIndex = 12;
@@ -152,7 +154,7 @@ namespace ToDoList
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(417, 247);
+            this.button3.Location = new System.Drawing.Point(626, 243);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 34);
             this.button3.TabIndex = 13;
@@ -174,11 +176,32 @@ namespace ToDoList
             this.textBox3.Size = new System.Drawing.Size(395, 20);
             this.textBox3.TabIndex = 15;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(25, 243);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(84, 34);
+            this.button4.TabIndex = 16;
+            this.button4.Text = "Search";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBox6.Location = new System.Drawing.Point(125, 251);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(198, 20);
+            this.textBox6.TabIndex = 17;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 584);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button3);
@@ -218,6 +241,8 @@ namespace ToDoList
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox textBox6;
     }
 }
 
