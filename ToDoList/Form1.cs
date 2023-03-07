@@ -12,6 +12,7 @@ namespace ToDoList
         {
             InitializeComponent();
         }
+
         SqlConnection con = new SqlConnection("Data source=.; initial catalog=ToDoListDB;integrated security=true");
 
         private void Form1_Load(object sender, EventArgs e)
@@ -23,7 +24,8 @@ namespace ToDoList
         {
             SqlCommand selectCmd =
                 new SqlCommand(
-                    "Select id As Number,day As Day,time As Time,todo As ToDo,requirements As Requirements from Table1", con);
+                    "Select id As Number,day As Day,time As Time,todo As ToDo,requirements As Requirements from Table1",
+                    con);
             SqlDataAdapter da = new SqlDataAdapter();
             da.SelectCommand = selectCmd;
             DataTable dt = new DataTable();
@@ -53,9 +55,10 @@ namespace ToDoList
         private void button2_Click(object sender, EventArgs e)
         {
             SqlCommand editBtn = new SqlCommand(
-                    "Update Table1 Set day=@day,time=@time,todo=@todo,requirements=@requirements where id=@id",
-                    con);
-            editBtn.Parameters.AddWithValue("day", textBox2.Text); ;
+                "Update Table1 Set day=@day,time=@time,todo=@todo,requirements=@requirements where id=@id",
+                con);
+            editBtn.Parameters.AddWithValue("day", textBox2.Text);
+            ;
             editBtn.Parameters.AddWithValue("time", textBox3.Text);
             editBtn.Parameters.AddWithValue("todo", textBox4.Text);
             editBtn.Parameters.AddWithValue("requirements", textBox5.Text);
@@ -105,5 +108,25 @@ namespace ToDoList
             da.Fill(dt);
             dataGridView1.DataSource = dt;
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Action<Control.ControlCollection> func = null;
+                func = (controls) =>
+                {
+                    foreach (Control control in controls)
+                    {
+                        if (control is TextBox)
+                        {
+                            (control as TextBox).Clear();
+                        }
+                        else
+                        {
+                            func(control.Controls);
+                        }
+                    }
+                };
+                func(Controls);
+            }
+        }
     }
-}
