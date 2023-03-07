@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -112,21 +113,129 @@ namespace ToDoList
         private void button5_Click(object sender, EventArgs e)
         {
             Action<Control.ControlCollection> func = null;
-                func = (controls) =>
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
                 {
-                    foreach (Control control in controls)
+                    if (control is TextBox)
                     {
-                        if (control is TextBox)
-                        {
-                            (control as TextBox).Clear();
-                        }
-                        else
-                        {
-                            func(control.Controls);
-                        }
+                        (control as TextBox).Clear();
                     }
-                };
-                func(Controls);
+                    else
+                    {
+                        func(control.Controls);
+                    }
+                }
+            };
+            func(Controls);
+        }
+
+        private void textBox4_Enter(object sender, EventArgs e)
+        {
+            if (textBox4.Text == "Add a ToDo Task")
+            {
+                textBox4.Text = "";
+                textBox4.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox4_Leave(object sender, EventArgs e)
+        {
+            if (textBox4.Text == "")
+            {
+                textBox4.Text = "Add a ToDo Task";
+                textBox4.ForeColor = Color.LightSlateGray;
+            }
+        }
+
+        private void textBox3_Enter(object sender, EventArgs e)
+        {
+            if (textBox3.Text == "HH:MM:SS")
+            {
+                textBox3.Text = "";
+                textBox3.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox3_Leave(object sender, EventArgs e)
+        {
+            if (textBox3.Text == "")
+            {
+                textBox3.Text = "HH:MM:SS";
+                textBox3.ForeColor = Color.LightSlateGray;
+            }
+        }
+
+        private void textBox2_Enter(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "MM/DD/YYYY")
+            {
+                textBox2.Text = "";
+                textBox2.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                textBox2.Text = "MM/DD/YYYY";
+                textBox2.ForeColor = Color.LightSlateGray;
+            }
+        }
+
+        private void textBox5_Enter(object sender, EventArgs e)
+        {
+            if (textBox5.Text == "Add requirements for the task")
+            {
+                textBox5.Text = "";
+                textBox5.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox5_Leave(object sender, EventArgs e)
+        {
+            if (textBox5.Text == "")
+            {
+                textBox5.Text = "Add requirements for the task";
+                textBox5.ForeColor = Color.LightSlateGray;
+            }
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "Represent how important the task is")
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "Represent how important the task is";
+                textBox1.ForeColor = Color.LightSlateGray;
+            }
+        }
+
+        private void textBox6_Enter(object sender, EventArgs e)
+        {
+            if (textBox6.Text == "Search a specific todo task")
+            {
+                textBox6.Text = "";
+                textBox6.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox6_Leave(object sender, EventArgs e)
+        {
+             if (textBox6.Text == "")
+            {
+                textBox6.Text = "Search a specific todo task";
+                textBox6.ForeColor = Color.LightSlateGray;
             }
         }
     }
+}

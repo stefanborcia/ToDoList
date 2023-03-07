@@ -52,61 +52,63 @@ namespace ToDoList
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(219, 89);
+            this.label1.Font = new System.Drawing.Font("Javanese Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(201, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 22);
+            this.label1.Size = new System.Drawing.Size(82, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Number";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(219, 237);
+            this.label2.Font = new System.Drawing.Font("Javanese Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(201, 232);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 22);
+            this.label2.Size = new System.Drawing.Size(62, 38);
             this.label2.TabIndex = 1;
             this.label2.Text = "ToDo";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(219, 183);
+            this.label3.Font = new System.Drawing.Font("Javanese Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(201, 178);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 22);
+            this.label3.Size = new System.Drawing.Size(59, 38);
             this.label3.TabIndex = 2;
             this.label3.Text = "Time";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(219, 137);
+            this.label4.Font = new System.Drawing.Font("Javanese Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(201, 131);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 22);
+            this.label4.Size = new System.Drawing.Size(56, 38);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Day";
+            this.label4.Text = "Date";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(219, 293);
+            this.label5.Font = new System.Drawing.Font("Javanese Text", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(201, 288);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 22);
+            this.label5.Size = new System.Drawing.Size(129, 38);
             this.label5.TabIndex = 4;
             this.label5.Text = "Requirements";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBox1.Location = new System.Drawing.Point(358, 91);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(395, 20);
             this.textBox1.TabIndex = 5;
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Enter);
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // textBox4
             // 
@@ -114,6 +116,8 @@ namespace ToDoList
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(395, 20);
             this.textBox4.TabIndex = 8;
+            this.textBox4.Enter += new System.EventHandler(this.textBox4_Enter);
+            this.textBox4.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
             // textBox5
             // 
@@ -121,6 +125,8 @@ namespace ToDoList
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(395, 20);
             this.textBox5.TabIndex = 9;
+            this.textBox5.Enter += new System.EventHandler(this.textBox5_Enter);
+            this.textBox5.Leave += new System.EventHandler(this.textBox5_Leave);
             // 
             // dataGridView1
             // 
@@ -135,6 +141,7 @@ namespace ToDoList
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Javanese Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(358, 340);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 34);
@@ -145,6 +152,7 @@ namespace ToDoList
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Javanese Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(461, 340);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 34);
@@ -155,6 +163,7 @@ namespace ToDoList
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Javanese Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(669, 340);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(84, 34);
@@ -169,6 +178,8 @@ namespace ToDoList
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(395, 20);
             this.textBox2.TabIndex = 14;
+            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
+            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
             // 
             // textBox3
             // 
@@ -176,9 +187,12 @@ namespace ToDoList
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(395, 20);
             this.textBox3.TabIndex = 15;
+            this.textBox3.Enter += new System.EventHandler(this.textBox3_Enter);
+            this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Javanese Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(208, 26);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(84, 34);
@@ -190,14 +204,17 @@ namespace ToDoList
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBox6.ForeColor = System.Drawing.SystemColors.WindowText;
             this.textBox6.Location = new System.Drawing.Point(358, 34);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(395, 20);
             this.textBox6.TabIndex = 17;
+            this.textBox6.Enter += new System.EventHandler(this.textBox6_Enter);
+            this.textBox6.Leave += new System.EventHandler(this.textBox6_Leave);
             // 
             // button5
             // 
+            this.button5.Font = new System.Drawing.Font("Javanese Text", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(568, 340);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(84, 34);
@@ -228,6 +245,7 @@ namespace ToDoList
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Form1";
             this.Text = "ToDo List";
             this.Load += new System.EventHandler(this.Form1_Load);
