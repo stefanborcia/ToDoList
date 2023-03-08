@@ -144,7 +144,7 @@ namespace ToDoList
             if (textBox4.Text == "")
             {
                 textBox4.Text = "Add a ToDo Task";
-                textBox4.ForeColor = Color.LightSlateGray;
+                textBox4.ForeColor = Color.Black;
             }
         }
 
@@ -162,7 +162,7 @@ namespace ToDoList
             if (textBox3.Text == "")
             {
                 textBox3.Text = "HH:MM:SS";
-                textBox3.ForeColor = Color.LightSlateGray;
+                textBox3.ForeColor = Color.Black;
             }
         }
 
@@ -180,7 +180,7 @@ namespace ToDoList
             if (textBox2.Text == "")
             {
                 textBox2.Text = "MM/DD/YYYY";
-                textBox2.ForeColor = Color.LightSlateGray;
+                textBox2.ForeColor = Color.Black;
             }
         }
 
@@ -198,7 +198,7 @@ namespace ToDoList
             if (textBox5.Text == "")
             {
                 textBox5.Text = "Add requirements for the task";
-                textBox5.ForeColor = Color.LightSlateGray;
+                textBox5.ForeColor = Color.Black;
             }
         }
 
@@ -216,7 +216,7 @@ namespace ToDoList
             if (textBox1.Text == "")
             {
                 textBox1.Text = "Represent how important the task is";
-                textBox1.ForeColor = Color.LightSlateGray;
+                textBox1.ForeColor = Color.Black;
             }
         }
 
@@ -234,7 +234,7 @@ namespace ToDoList
              if (textBox6.Text == "")
             {
                 textBox6.Text = "Search a specific todo task";
-                textBox6.ForeColor = Color.LightSlateGray;
+                textBox6.ForeColor = Color.Black;
             }
         }
     }
